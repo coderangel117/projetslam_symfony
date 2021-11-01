@@ -14,4 +14,9 @@
 
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
+
+    <p>
+        déja inscrit ?
+        <a href="{{ path('app_login') }}">connectez vous </a>
+    </p>
 {% endblock %}
