@@ -8,17 +8,21 @@
 
 
     <h1>{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            bonjour untel vous êtes bien connecté ✅
+            bonjour {{ app.user.username  }} vous êtes bien connecté ✅
         {% else %}
             bonjour  quelqu'un
         {% endif %} </h1>
 
-    <div id="wrap">
+    <div ">
         <ul class="navbar">
+            <li>
+                <a href="{{ path('index') }}">accueil</a>
+            </li>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <li>
                     <a href="{{ path('app_logout') }}">déconnexion</a>
                 </li>
+                <br>
             {% else %}
                 <li>
                     <a href="{{ path('app_login') }}">connexion</a>
